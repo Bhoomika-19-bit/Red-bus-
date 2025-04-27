@@ -1,0 +1,101 @@
+.login-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: none; /* Remove red background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Background GIF fully covers screen */
+.full-bg-gif {
+  background-image: url('/public/r.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  opacity: 1;
+  animation: hideGif 1s ease-in-out 5s forwards;
+}
+
+@keyframes hideSplash {
+  to {
+    
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+/* Wrapper to position elements */
+.login-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Hidden form for 8 seconds, then fades in */
+.login-form {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(241, 232, 232);
+  padding: 5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  text-align: center;
+
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 0s;
+}
+
+
+@keyframes fadeIn {
+  
+  to {
+
+    opacity: 1;
+  }
+}
+
+.login-form input {
+  display: block;
+  margin: 2rem auto;
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  z-index: 2;
+}
+
+.login-form button {
+  padding: 10px 30px;
+  background-color: crimson;
+  border: none;
+  border-radius: 7px;
+    color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.error-msg {
+  color: red;
+  margin-top: 10px;
+}
+
+
